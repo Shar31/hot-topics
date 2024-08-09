@@ -1,0 +1,479 @@
+/* Mobile First design it is */
+/* Colors */
+
+:root {
+    --primary-color: #6a0dad; /* Purple */
+    --secondary-color: #a040a1; /* Medium Purple */
+    --accent-color: #d4a6d3; /* Light Purple */
+    --highlight-color: #b565c8; /* Highlight color for selected button */
+    --active-text-color: #ffffff; /* Active link text color */
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: white;
+    color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Logo Styles */
+.logo img {
+    width: auto;
+    height: auto;
+    max-width: 150px;
+    max-height: 50px;
+}
+
+/* Navigation Styles*/
+nav {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 1rem; 
+}
+
+nav ul li {
+    width: 100%; 
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+    width: 100%; 
+    display: block; 
+}
+
+/* Ensure there is space between buttons */
+
+nav ul li + li {
+    margin-top: 1rem; 
+}
+
+/* Active Button Styling */
+nav ul li a.active {
+    color: var(--active-text-color);
+    background: var(--highlight-color); 
+}
+
+/* Masthead Styles (Mobile First) */
+.masthead {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    margin: 0; /* Remove margins for full-width */
+    overflow: hidden; /* Ensure the image is clipped to the container */
+}
+
+.masthead-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    display: block;
+}
+
+/* Text Overlay */
+.masthead-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+}
+
+.masthead-title {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.masthead-tagline {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.masthead h1, .masthead p {
+    margin: 0;
+}
+
+
+/* Main Content */
+
+.main-content {
+    margin: 2rem auto;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+article {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Portfolio Styles */
+
+.portfolio {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr; /* 1 column layout for mobile */
+}
+
+.portfolio .card {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+}
+
+.portfolio img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+.footer {
+    background: var(--secondary-color);
+    color: var(--active-text-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0.5rem 0;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-media-link {
+    color: var(--active-text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media-link:hover {
+    color: var(--highlight-color);
+}
+
+/* Tablet View */
+@media (min-width: 35rem) and (max-width: 80rem) {
+
+    /* Navigation Styles */
+    nav {
+        max-width: none; 
+        padding: 0 1rem; 
+    }
+
+    nav ul {
+        display: flex; 
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 2rem; 
+        padding: 0; 
+        margin: 1rem 0; 
+    }
+
+    nav ul li {
+        margin: 0; 
+    }
+
+    nav ul li a {
+        width: auto;
+        padding: 1rem 2rem; 
+    }
+
+    /* Masthead Styles */
+    @media (min-width: 35rem) and (max-width: 80rem) {
+        .masthead {
+            height: 400px; /* Adjust height for tablet screens */
+        }
+    
+        .masthead-title {
+            font-size: 2.5rem;
+        }
+    
+        .masthead-tagline {
+            font-size: 1.5rem;
+        }
+    }
+    
+    /* Main Content Styles */
+    .main-content {
+        max-width: 100%; 
+        padding: 0 1rem; 
+    }
+
+    .main-content article {
+        margin-bottom: 2rem; 
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row; 
+        align-items: flex-start; 
+        gap: 1rem; 
+    }
+
+    .article-figure {
+        width: 40%; 
+        margin: 0; 
+    }
+
+    .article-image {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .article-text {
+        width: 60%; 
+    }
+
+    .article-caption {
+        margin-top: 0.5rem; 
+    }
+
+    .article-paragraph {
+        margin-bottom: 1rem; 
+    }
+
+    .article-citations {
+        font-style: italic; 
+    }
+    /* Portfolio Styles */
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 1rem; 
+        padding: 0 1rem; 
+    }
+
+    .portfolio-item {
+        background: white; 
+        border: 1px solid #ddd; 
+        border-radius: 8px; 
+        padding: 1rem; 
+        text-align: center; 
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto; 
+        border-radius: 8px; 
+    }
+
+    .portfolio-item p {
+        margin: 0.5rem 0 0; 
+        font-size: 0.875rem; 
+    }
+    .footer {
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .footer p {
+        margin: 0.5rem 0;
+    }
+
+    .social-media {
+        justify-content: center;
+    }
+
+}
+
+
+
+
+/* Desktop View */
+@media (min-width: 80rem) {
+    /* Header Container */
+    .header-container {
+        display: flex;
+        align-items: center; 
+        justify-content: flex-start; 
+        padding: 1rem 2rem; 
+    }
+
+    .logo {
+        margin-right: 1rem; 
+    }
+
+    #logo-img {
+        max-width: 150px; 
+        height: auto; 
+    }
+
+    nav {
+        max-width: none;
+        padding: 0 1rem;
+        margin: 0; 
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; 
+        gap: 1rem; 
+        padding: 0;
+        margin: 0; 
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        width: auto;
+        padding: 1rem 1.5rem; 
+    }
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 1rem; 
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        padding: 0.5rem 1rem; 
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-link.active {
+        color: var(--active-text-color); 
+        background: var(--highlight-color); 
+    }
+    .masthead {
+        height: 500px; /* Adjust height for desktop screens */
+    }
+
+    .masthead-title {
+        font-size: 3rem;
+    }
+
+    .masthead-tagline {
+        font-size: 1.75rem;
+    }
+   
+    /* Main Content Styles */
+    .main-content {
+        padding: 2rem;
+    }
+
+    /* Main Content Article Layout */
+    .main-content .content-wrapper {
+        display: flex;
+        flex-direction: row; 
+        align-items: flex-start; 
+        gap: 2rem; 
+    }
+
+    .article-figure {
+        width: 40%; 
+        margin: 0; 
+    }
+
+    .article-image {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .article-text {
+        width: 60%; 
+    }
+
+    .article-caption {
+        margin-top: 0.5rem; 
+    }
+
+    .article-paragraph {
+        margin-bottom: 1rem; 
+    }
+
+    .article-citations {
+        font-style: italic; 
+    }
+
+    /* Portfolio Styles */
+    .portfolio {
+        display: grid; /* Using grid layout for this */
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for desktops */
+        gap: 1rem; 
+        padding: 0 2rem; 
+    }
+
+    .portfolio-item {
+        background: white; 
+        border: 1px solid #ddd;
+        border-radius: 8px; 
+        padding: 1rem; 
+        text-align: center; 
+    }
+
+    .portfolio-item img {
+        width: 100%; 
+        height: auto; 
+        border-radius: 8px; 
+    }
+
+    .portfolio-item p {
+        margin: 0.5rem 0 0; 
+        font-size: 0.875rem;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+        text-align: left;
+    }
+
+    .footer p {
+        margin: 0;
+    }
+
+    .social-media {
+        justify-content: flex-end;
+    }
+}
